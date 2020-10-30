@@ -1,37 +1,42 @@
-# Pytorch Yolo V3 - Batteries Detection
+# BATTERIA - SATURDAYS AI PROJECT
 
-Modelo creado como proyecto final para DemoDay de Saturdays Ai Santiago 2019.
+This repository contains final code developed for final projects of Saturdays AI Santiago 2019. 
 
-## [Project Information]
+# # Starting 🚀 
+### About BatterIA!
 
-La idea principal del proyecto se basa en la detección y reconocimiento de basura con potencial de reciclado, como por ejemplo: vidrio, carton, plastico,
-etc. Una vez este material era identificado dentro de los desechos es posible idear un plan de automatización para el reciclado automatico usando
-el presente modelo para la separación inteligente de estos residuos y evitando así la separación manual que es el actual metodo utilizado.
+The goal of Saturdays AI Santiago was focused on allowing their students to use data science tools and artificial intelligence models in projects with positive social impact. In the team named BatterIA which I participated, we opted to make a possible solution for ecological sector, opting to training an intelligent model capable of identifying lithium cells batteries that were not properly recycled being separating them from the rest of the waste.
 
-Para simplificar la elaboración del proyecto y de modo investigativo, se ha simplificado el problema solo enfocandose en la identificación de material critico reciclable
-de manera separada, por lo cual, hemos optado por la identificación unica de Pilas o celdas de energia para abarcar el presente proyecto.
+## # How it Works? 🔧
+This model was developed in Pytorch and also we opted to use a pretrained model named YOLO which is currently the state of art in multiple object detection.
 
-## [Model About]
-- Dataset personalizado: Se recpilaron 1000 imagenes aproximadamente para el entrenamiento del modelo.
-- El entrenamiento fue realizado por los weights originales de yolov3 tiny.
-- Se modificaron los hiperparametros de convoluciones y para 1 sola clase, además de especificarse los epochs sugeridos por el autor original.
+We created a Custom Dataset downloading by script about 1000 Images of lithium cells and we trained the model using commons training params.
 
 
-## [Project Status]
-- Modelo funcionando de manera optima.
-- Capaz de detectar pilas en imagenes/videos en la cual el objeto este quieto o en movimiento.
+* Learning Rate : 2e-5
+* Epochs : 273  
+* Batch Size : 16
+* Optimizer : Adam
+
+**Note**: All parameters used are specified in train.py, but all this configuration are detailed in the original implementation of YOLO for Pytorch.
 
 
-## [Details]
-- Posibilidad de expandir la cantidad de clases a detectar tal como es mencionada en la idea original del proyecto.
-- Se detectaron problema de sesgos asociadas a las imgenes usadas, principalmente en aquellas pilas que se encuentran con enfoque alejado de la imagen.
-- Es posible aumentar la precisión amplificando el número de dataset.
+# # Final Comentary:
+Despite the fact that the project works wonderfully and perfectly fulfills the goal for which it was designed. We have detected some details both to correct and to continue developing in the future.
 
-## [TODO]
-- Agregar ruido al dataset a modo de ampliar la cantidad de imagenes en el entrenamiento
-- Utilizar configuraciones y weights originales de yolov3 para comparar resultados ya obtenidos por yolov3 tiny
-- Agregar una segunda y tercera categoría para prueba directa de detección.
 
-## [CITATION]
-- BASED ON: https://github.com/ultralytics/yolov3#citation
-- [![DOI](https://zenodo.org/badge/146165888.svg)](https://zenodo.org/badge/latestdoi/146165888)
+### TO DO 📑
+* Possibility of expanding the number of classes to detect different types of waste at the same time.
+
+* Increase detection accuracy by increasing the number of images for the training data set.
+
+* Add Data Augmentation to training Dataset.
+
+* Use original yolov3 settings and weights to compare results already obtained by current config.
+
+
+# # Preview
+<p float="left">
+ <img src="batteria.gif" />
+</p>
+
